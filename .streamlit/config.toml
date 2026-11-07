@@ -1,0 +1,55 @@
+# AI Task Planner のデザイン基準（UI 実装プロンプト §3）。
+# 色・角丸・字送りは、まずここで指定する。config.toml で表せない部分
+# （濃紺ヘッダー・カテゴリバッジ・STEP 段組み）だけ app/workspace_theme.py の CSS が補う。
+
+[theme]
+base = "light"
+primaryColor = "#087e8b"            # 主アクセント（CTA・選択中の枠）
+backgroundColor = "#edf2f6"         # ページ背景
+secondaryBackgroundColor = "#ffffff"  # 入力・パネルの下地
+textColor = "#132b40"
+linkColor = "#087e8b"
+borderColor = "#dce6ec"
+codeBackgroundColor = "#f2f7f9"
+dataframeBorderColor = "#dce6ec"
+dataframeHeaderBackgroundColor = "#f2f7f9"
+
+baseRadius = "8px"
+buttonRadius = "7px"
+showWidgetBorder = true
+
+font = "sans-serif"
+baseFontSize = 16
+headingFontSizes = ["28px", "22px", "17px", "16px", "14px", "13px"]
+headingFontWeights = [700, 650, 650, 600, 600, 600]
+linkUnderline = false
+
+# 状態色。カテゴリ 3 色（文書=青緑 / 開発=青紫 / 画像=橙）と衝突させない。
+greenColor = "#2f8f6a"
+redColor = "#a63525"
+orangeColor = "#cb932e"
+blueColor = "#414da0"
+
+# 常にライトで見せる。
+#
+# base = "light" は「未指定の項目が何から継承するか」を決めるだけで、表示モードは
+# 固定しない。閲覧者の Appearance 設定（既定は「システムに合わせる」）が dark の
+# ときは [theme.dark] 側が使われるため、そこにも同じライト配色を入れて、どちらの
+# 見え方でも同一になるようにする。app/workspace_theme.py の CSS もライト前提。
+[theme.dark]
+primaryColor = "#087e8b"
+backgroundColor = "#edf2f6"
+secondaryBackgroundColor = "#ffffff"
+textColor = "#132b40"
+linkColor = "#087e8b"
+borderColor = "#dce6ec"
+codeBackgroundColor = "#f2f7f9"
+dataframeBorderColor = "#dce6ec"
+dataframeHeaderBackgroundColor = "#f2f7f9"
+greenColor = "#2f8f6a"
+redColor = "#a63525"
+orangeColor = "#cb932e"
+blueColor = "#414da0"
+
+[server]
+runOnSave = true

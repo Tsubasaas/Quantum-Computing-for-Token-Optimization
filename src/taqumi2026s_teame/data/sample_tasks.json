@@ -1,0 +1,20 @@
+{
+  "_note": "フォールバック用サンプル。経費精算 SaaS の構築＋帳票処理＋販促素材で、コード/ターミナル/文書/OCR/画像生成のカテゴリを一通り含む 14 タスク。タスクIDは正準形の3桁ゼロ詰め（T001..）。",
+  "request": "領収書・請求書をアップロードすると自動で経費精算できる SaaS を作りたい。API とインフラ、帳票の OCR と項目抽出、レポート機能、そしてプロダクトの紹介画像も必要。",
+  "tasks": [
+    {"id": "T001", "title": "経費 API のスキャフォールド生成", "role": "code_gen", "difficulty": 3, "priority": 5, "est_time": 3, "dependencies": [], "confidential": false},
+    {"id": "T002", "title": "認証・権限まわりのバグ修正", "role": "code_fix", "difficulty": 4, "priority": 5, "est_time": 3, "dependencies": ["T001"], "confidential": true},
+    {"id": "T003", "title": "API のコードレビュー", "role": "code_review", "difficulty": 3, "priority": 4, "est_time": 2, "dependencies": ["T001"], "confidential": false},
+    {"id": "T004", "title": "E2E テストの生成", "role": "test_gen", "difficulty": 3, "priority": 3, "est_time": 2, "dependencies": ["T001"], "confidential": false},
+    {"id": "T005", "title": "コンテナ化と CI/CD パイプライン構築", "role": "devops", "difficulty": 4, "priority": 4, "est_time": 3, "dependencies": ["T001"], "confidential": false},
+    {"id": "T006", "title": "本番環境のデプロイ・動作確認スクリプト", "role": "terminal_ops", "difficulty": 3, "priority": 4, "est_time": 2, "dependencies": ["T005"], "confidential": false},
+    {"id": "T007", "title": "アップロード帳票の OCR 処理", "role": "ocr", "difficulty": 3, "priority": 5, "est_time": 2, "dependencies": ["T001"], "confidential": false},
+    {"id": "T008", "title": "明細・項目の抽出", "role": "doc_extract", "difficulty": 4, "priority": 5, "est_time": 3, "dependencies": ["T007"], "confidential": false},
+    {"id": "T009", "title": "請求書 PDF の内容確認・要約", "role": "doc_understand", "difficulty": 3, "priority": 3, "est_time": 2, "dependencies": ["T007"], "confidential": false},
+    {"id": "T010", "title": "仕様書・規約 PDF の理解", "role": "doc_understand", "difficulty": 2, "priority": 2, "est_time": 2, "dependencies": [], "confidential": false},
+    {"id": "T011", "title": "ヒーロー画像の生成", "role": "image_gen", "difficulty": 3, "priority": 4, "est_time": 2, "dependencies": ["T010"], "confidential": false},
+    {"id": "T012", "title": "SNS 用バナー画像の生成", "role": "image_gen", "difficulty": 2, "priority": 3, "est_time": 2, "dependencies": ["T010"], "confidential": false},
+    {"id": "T013", "title": "運用手順の整備", "role": "doc_understand", "difficulty": 2, "priority": 2, "est_time": 2, "dependencies": ["T006"], "confidential": false},
+    {"id": "T014", "title": "バグ修正の追い込み", "role": "code_fix", "difficulty": 4, "priority": 4, "est_time": 3, "dependencies": ["T003"], "confidential": false}
+  ]
+}

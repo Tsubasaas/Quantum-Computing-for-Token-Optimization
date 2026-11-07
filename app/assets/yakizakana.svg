@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 10 1090 365" role="img" aria-label="ヤキザカナ">
+  <g fill="none" stroke="#f4fafb" stroke-width="23" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 130 L171 314 M57 218 L243 163 L200 222"/>
+    <path d="M528 141 L543 219 M498 187 L661 170 M619 132 C617 211 596 274 545 314"/>
+    <path d="M684 119 L683 137 M713 119 L711 137" stroke-width="21"/>
+    <path d="M814 132 C790 213 769 267 723 303 M737 187 L874 178 L829 310 L819 297"/>
+    <path d="M1021 133 C1008 220 986 271 939 310 M926 197 L1072 186"/>
+  </g>
+  <g fill="none" stroke="#67d5cd" stroke-width="21" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M339 43 L434 92 L338 125 Z M362 120 L362 300 M295 190 L430 162 M287 244 L441 213 M362 300 L322 349 L402 349 Z"/>
+  </g>
+  <circle cx="372" cy="86" r="11" fill="#67d5cd"/>
+</svg>

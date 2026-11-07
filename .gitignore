@@ -1,0 +1,37 @@
+# Python cache and bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment and local Python settings
+.venv/
+venv/
+.env
+
+# Build and packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Tool caches
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE and OS files
+.DS_Store
+.vscode/
+
+# Experiment artifacts
+outputs/
+artifacts/
+logs/
+tmp/

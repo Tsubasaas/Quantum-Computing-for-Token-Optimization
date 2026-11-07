@@ -1,0 +1,5747 @@
+{
+  "_note": "自動生成（scripts/build_models.py）。capability は公開ベンチの実測をそのまま （画像のみ Elo を線形正規化）。値なし = null（そのタスク担当不可）。推測値は入れない。",
+  "normalization": {
+    "repo_bug_fix": "SWE-bench Verified % / 未掲載は SWE-rebench Resolved Rate",
+    "terminal": "Terminal-Bench 2.1 Accuracy",
+    "document": "IDP Leaderboard Overall / 100",
+    "ocr": "IDP Leaderboard OlmOCR / 100",
+    "image_generation": "Image Arena Elo -> clip((elo-850)/330, 0, 1)",
+    "cost": "SWE-rebench Cost/Problem 優先 / 公式単価x標準トークン / null",
+    "latency": "SWE-rebench Tokens/Problem / 30000 / null"
+  },
+  "checked_at": "2026-09-08",
+  "category_source": {
+    "repo_bug_fix": "SWE-bench Verified",
+    "terminal": "Terminal-Bench 2.1",
+    "document": "IDP Leaderboard",
+    "ocr": "IDP Leaderboard",
+    "image_generation": "Image Arena"
+  },
+  "sources_index": {
+    "SWE-bench Verified": "https://www.swebench.com/",
+    "SWE-rebench": "https://swe-rebench.com/",
+    "Terminal-Bench 2.1": "https://llm-stats.com/benchmarks/terminal-bench-2.1",
+    "IDP Leaderboard": "https://www.idp-leaderboard.org/",
+    "Image Arena": "https://artificialanalysis.ai/text-to-image/arena",
+    "Anthropic pricing": "https://platform.claude.com/docs/en/about-claude/pricing",
+    "OpenAI pricing": "https://developers.openai.com/api/docs/pricing",
+    "Google pricing": "https://ai.google.dev/gemini-api/docs/pricing",
+    "xAI pricing": "https://docs.x.ai/docs/models"
+  },
+  "models": [
+    {
+      "model_id": "claude_opus_5",
+      "model_name": "Claude Opus 5",
+      "provider": "Anthropic",
+      "model_family": "Claude",
+      "model_version": "5",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 5,
+      "context_window": 1000000,
+      "capability": {
+        "repo_bug_fix": 0.96,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 5.0,
+        "output_per_1m": 25.0,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": 3.47,
+        "price_source": "Anthropic pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": 144.1,
+        "note": null
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.96,
+        "swe_rebench_resolved_rate": 0.634,
+        "swe_rebench_pass_at_5": 0.748,
+        "swe_rebench_cost_per_problem_usd": 3.47,
+        "swe_rebench_tokens_per_problem": 4322143
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "claude_mythos_5",
+      "model_name": "Claude Mythos 5",
+      "provider": "Anthropic",
+      "model_family": "Claude",
+      "model_version": "mythos-5",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 5,
+      "context_window": 1000000,
+      "capability": {
+        "repo_bug_fix": 0.955,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 10.0,
+        "output_per_1m": 50.0,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "Anthropic pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.955
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "claude_fable_5",
+      "model_name": "Claude Fable 5",
+      "provider": "Anthropic",
+      "model_family": "Claude",
+      "model_version": "5",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 4,
+      "context_window": 1000000,
+      "capability": {
+        "repo_bug_fix": 0.95,
+        "terminal": 0.843,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 10.0,
+        "output_per_1m": 50.0,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": 4.4,
+        "price_source": "Anthropic pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": 83.9,
+        "note": null
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.95,
+        "swe_rebench_resolved_rate": 0.645,
+        "swe_rebench_pass_at_5": 0.784,
+        "swe_rebench_cost_per_problem_usd": 4.4,
+        "swe_rebench_tokens_per_problem": 2518308,
+        "terminal_bench_2_1": 0.843
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        },
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "claude_opus_48",
+      "model_name": "Claude Opus 4.8",
+      "provider": "Anthropic",
+      "model_family": "Claude",
+      "model_version": "4.8",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 5,
+      "context_window": 1000000,
+      "capability": {
+        "repo_bug_fix": 0.886,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 5.0,
+        "output_per_1m": 25.0,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "Anthropic pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.886
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "claude_opus_47",
+      "model_name": "Claude Opus 4.7",
+      "provider": "Anthropic",
+      "model_family": "Claude",
+      "model_version": "4.7",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 5,
+      "context_window": 1000000,
+      "capability": {
+        "repo_bug_fix": 0.876,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 5.0,
+        "output_per_1m": 25.0,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "Anthropic pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.876
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "claude_opus_46",
+      "model_name": "Claude Opus 4.6",
+      "provider": "Anthropic",
+      "model_family": "Claude",
+      "model_version": "4.6",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 5,
+      "context_window": 1000000,
+      "capability": {
+        "repo_bug_fix": 0.808,
+        "terminal": null,
+        "document": 0.804,
+        "ocr": 0.741,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 5.0,
+        "output_per_1m": 25.0,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "Anthropic pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.808,
+        "idp_overall": 80.4,
+        "idp_olmocr": 74.1
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        },
+        "document": {
+          "source": "IDP Leaderboard v1.5 (Overall)",
+          "date": "2026-09-08",
+          "verified": true
+        },
+        "ocr": {
+          "source": "IDP Leaderboard v1.5 (OlmOCR)",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "claude_opus_45",
+      "model_name": "Claude Opus 4.5",
+      "provider": "Anthropic",
+      "model_family": "Claude",
+      "model_version": "4.5",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 5,
+      "context_window": 200000,
+      "capability": {
+        "repo_bug_fix": 0.809,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 5.0,
+        "output_per_1m": 25.0,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "Anthropic pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.809
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "claude_opus_41",
+      "model_name": "Claude Opus 4.1",
+      "provider": "Anthropic",
+      "model_family": "Claude",
+      "model_version": "4.1",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 5,
+      "context_window": 200000,
+      "capability": {
+        "repo_bug_fix": 0.745,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 15.0,
+        "output_per_1m": 75.0,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "Anthropic pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.745
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "claude_sonnet_5",
+      "model_name": "Claude Sonnet 5",
+      "provider": "Anthropic",
+      "model_family": "Claude",
+      "model_version": "5",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 6,
+      "context_window": 1000000,
+      "capability": {
+        "repo_bug_fix": 0.852,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 2.0,
+        "output_per_1m": 10.0,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": 1.43,
+        "price_source": "Anthropic pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": 154.9,
+        "note": null
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.852,
+        "swe_rebench_resolved_rate": 0.568,
+        "swe_rebench_pass_at_5": 0.748,
+        "swe_rebench_cost_per_problem_usd": 1.43,
+        "swe_rebench_tokens_per_problem": 4645617
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "claude_sonnet_46",
+      "model_name": "Claude Sonnet 4.6",
+      "provider": "Anthropic",
+      "model_family": "Claude",
+      "model_version": "4.6",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 6,
+      "context_window": 1000000,
+      "capability": {
+        "repo_bug_fix": 0.796,
+        "terminal": null,
+        "document": 0.807,
+        "ocr": 0.739,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 3.0,
+        "output_per_1m": 15.0,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "Anthropic pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.796,
+        "idp_overall": 80.7,
+        "idp_olmocr": 73.9
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        },
+        "document": {
+          "source": "IDP Leaderboard v1.5 (Overall)",
+          "date": "2026-09-08",
+          "verified": true
+        },
+        "ocr": {
+          "source": "IDP Leaderboard v1.5 (OlmOCR)",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "claude_sonnet_45",
+      "model_name": "Claude Sonnet 4.5",
+      "provider": "Anthropic",
+      "model_family": "Claude",
+      "model_version": "4.5",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 6,
+      "context_window": 200000,
+      "capability": {
+        "repo_bug_fix": 0.772,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 3.0,
+        "output_per_1m": 15.0,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "Anthropic pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.772
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "claude_sonnet_4",
+      "model_name": "Claude Sonnet 4",
+      "provider": "Anthropic",
+      "model_family": "Claude",
+      "model_version": "4",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 6,
+      "context_window": 200000,
+      "capability": {
+        "repo_bug_fix": 0.727,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 3.0,
+        "output_per_1m": 15.0,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "Anthropic pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.727
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "claude_haiku_45",
+      "model_name": "Claude Haiku 4.5",
+      "provider": "Anthropic",
+      "model_family": "Claude",
+      "model_version": "4.5",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 10,
+      "context_window": 1000000,
+      "capability": {
+        "repo_bug_fix": 0.733,
+        "terminal": null,
+        "document": 0.712,
+        "ocr": 0.612,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 1.0,
+        "output_per_1m": 5.0,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "Anthropic pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.733,
+        "idp_overall": 71.2,
+        "idp_olmocr": 61.2
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        },
+        "document": {
+          "source": "IDP Leaderboard v1.5 (Overall)",
+          "date": "2026-09-08",
+          "verified": true
+        },
+        "ocr": {
+          "source": "IDP Leaderboard v1.5 (OlmOCR)",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "claude_35_sonnet",
+      "model_name": "Claude 3.5 Sonnet",
+      "provider": "Anthropic",
+      "model_family": "Claude",
+      "model_version": "3.5",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 6,
+      "context_window": 200000,
+      "capability": {
+        "repo_bug_fix": 0.49,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 3.0,
+        "output_per_1m": 15.0,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "Anthropic pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.49
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "claude_code",
+      "model_name": "Claude Code",
+      "provider": "Anthropic",
+      "model_family": "Claude",
+      "model_version": "agent",
+      "model_type": "coding_agent",
+      "is_agent": true,
+      "agent_harness": "Claude Code",
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 4,
+      "context_window": 1000000,
+      "capability": {
+        "repo_bug_fix": 0.604,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": 3.39,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": 111.4,
+        "note": null
+      },
+      "benchmark_scores": {
+        "swe_rebench_resolved_rate": 0.604,
+        "swe_rebench_pass_at_5": 0.757,
+        "swe_rebench_cost_per_problem_usd": 3.39,
+        "swe_rebench_tokens_per_problem": 3341581
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-rebench",
+          "date": "2026-07",
+          "window": "2026-05-15..2026-07-01",
+          "sample_size": 111,
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "gpt_53_codex",
+      "model_name": "GPT-5.3 Codex",
+      "provider": "OpenAI",
+      "model_family": "GPT",
+      "model_version": "5.3-codex",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 6,
+      "context_window": 400000,
+      "capability": {
+        "repo_bug_fix": 0.85,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 1.75,
+        "output_per_1m": 14.0,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "OpenAI pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.85
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "gpt_52",
+      "model_name": "GPT-5.2",
+      "provider": "OpenAI",
+      "model_family": "GPT",
+      "model_version": "5.2",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 6,
+      "context_window": 400000,
+      "capability": {
+        "repo_bug_fix": 0.8,
+        "terminal": null,
+        "document": 0.815,
+        "ocr": 0.791,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 1.75,
+        "output_per_1m": 14.0,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "OpenAI pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.8,
+        "idp_overall": 81.5,
+        "idp_olmocr": 79.1
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        },
+        "document": {
+          "source": "IDP Leaderboard v1.5 (Overall)",
+          "date": "2026-09-08",
+          "verified": true
+        },
+        "ocr": {
+          "source": "IDP Leaderboard v1.5 (OlmOCR)",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "gpt56_sol",
+      "model_name": "GPT-5.6 Sol",
+      "provider": "OpenAI",
+      "model_family": "GPT",
+      "model_version": "5.6",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 6,
+      "context_window": 400000,
+      "capability": {
+        "repo_bug_fix": 0.623,
+        "terminal": 0.888,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 4.0,
+        "output_per_1m": 20.0,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": 0.85,
+        "price_source": "OpenAI pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": 20.2,
+        "note": null
+      },
+      "benchmark_scores": {
+        "swe_rebench_resolved_rate": 0.623,
+        "swe_rebench_pass_at_5": 0.793,
+        "swe_rebench_cost_per_problem_usd": 0.85,
+        "swe_rebench_tokens_per_problem": 605340,
+        "terminal_bench_2_1": 0.888
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-rebench",
+          "date": "2026-07",
+          "window": "2026-05-15..2026-07-01",
+          "sample_size": 111,
+          "verified": true
+        },
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "gpt56_terra",
+      "model_name": "GPT-5.6 Terra",
+      "provider": "OpenAI",
+      "model_family": "GPT",
+      "model_version": "5.6",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 6,
+      "context_window": 400000,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": 0.874,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 2.0,
+        "output_per_1m": 12.0,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "OpenAI pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "terminal_bench_2_1": 0.874
+      },
+      "benchmark_metadata": {
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "gpt56_luna",
+      "model_name": "GPT-5.6 Luna",
+      "provider": "OpenAI",
+      "model_family": "GPT",
+      "model_version": "5.6",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 8,
+      "context_window": 400000,
+      "capability": {
+        "repo_bug_fix": 0.436,
+        "terminal": 0.847,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 0.2,
+        "output_per_1m": 1.2,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": 0.11,
+        "price_source": "OpenAI pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": 13.2,
+        "note": null
+      },
+      "benchmark_scores": {
+        "swe_rebench_resolved_rate": 0.436,
+        "swe_rebench_pass_at_5": 0.595,
+        "swe_rebench_cost_per_problem_usd": 0.11,
+        "swe_rebench_tokens_per_problem": 395522,
+        "terminal_bench_2_1": 0.847
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-rebench",
+          "date": "2026-07",
+          "window": "2026-05-15..2026-07-01",
+          "sample_size": 111,
+          "verified": true
+        },
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "gpt_54",
+      "model_name": "GPT-5.4",
+      "provider": "OpenAI",
+      "model_family": "GPT",
+      "model_version": "5.4",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 8,
+      "context_window": 400000,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": 0.835,
+        "ocr": 0.81,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "OpenAI pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "idp_overall": 83.5,
+        "idp_olmocr": 81.0
+      },
+      "benchmark_metadata": {
+        "document": {
+          "source": "IDP Leaderboard v1.5 (Overall)",
+          "date": "2026-09-08",
+          "verified": true
+        },
+        "ocr": {
+          "source": "IDP Leaderboard v1.5 (OlmOCR)",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "gpt_5_mini",
+      "model_name": "GPT-5 mini",
+      "provider": "OpenAI",
+      "model_family": "GPT",
+      "model_version": "5-mini",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 10,
+      "context_window": 400000,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": 0.752,
+        "ocr": 0.699,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 0.25,
+        "output_per_1m": 2.0,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "OpenAI pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "idp_overall": 75.2,
+        "idp_olmocr": 69.9
+      },
+      "benchmark_metadata": {
+        "document": {
+          "source": "IDP Leaderboard v1.5 (Overall)",
+          "date": "2026-09-08",
+          "verified": true
+        },
+        "ocr": {
+          "source": "IDP Leaderboard v1.5 (OlmOCR)",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "gpt_5_nano",
+      "model_name": "GPT-5 nano",
+      "provider": "OpenAI",
+      "model_family": "GPT",
+      "model_version": "5-nano",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 12,
+      "context_window": 400000,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": 0.548,
+        "ocr": 0.352,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 0.05,
+        "output_per_1m": 0.4,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "OpenAI pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "idp_overall": 54.8,
+        "idp_olmocr": 35.2
+      },
+      "benchmark_metadata": {
+        "document": {
+          "source": "IDP Leaderboard v1.5 (Overall)",
+          "date": "2026-09-08",
+          "verified": true
+        },
+        "ocr": {
+          "source": "IDP Leaderboard v1.5 (OlmOCR)",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "gpt_41",
+      "model_name": "GPT-4.1",
+      "provider": "OpenAI",
+      "model_family": "GPT",
+      "model_version": "4.1",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 8,
+      "context_window": 1000000,
+      "capability": {
+        "repo_bug_fix": 0.546,
+        "terminal": null,
+        "document": 0.68,
+        "ocr": 0.494,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 2.0,
+        "output_per_1m": 8.0,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "OpenAI pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.546,
+        "idp_overall": 68.0,
+        "idp_olmocr": 49.4
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        },
+        "document": {
+          "source": "IDP Leaderboard v1.5 (Overall)",
+          "date": "2026-09-08",
+          "verified": true
+        },
+        "ocr": {
+          "source": "IDP Leaderboard v1.5 (OlmOCR)",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "gpt_41_mini",
+      "model_name": "GPT-4.1 mini",
+      "provider": "OpenAI",
+      "model_family": "GPT",
+      "model_version": "4.1-mini",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 10,
+      "context_window": 1000000,
+      "capability": {
+        "repo_bug_fix": 0.236,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 0.4,
+        "output_per_1m": 1.6,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "OpenAI pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.236
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "o3_mini",
+      "model_name": "o3-mini",
+      "provider": "OpenAI",
+      "model_family": "o-series",
+      "model_version": "o3-mini",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 6,
+      "context_window": 200000,
+      "capability": {
+        "repo_bug_fix": 0.493,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 1.1,
+        "output_per_1m": 4.4,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "OpenAI pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.493
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "codex",
+      "model_name": "Codex",
+      "provider": "OpenAI",
+      "model_family": "GPT",
+      "model_version": "agent",
+      "model_type": "coding_agent",
+      "is_agent": true,
+      "agent_harness": "Codex",
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 5,
+      "context_window": 400000,
+      "capability": {
+        "repo_bug_fix": 0.58,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": 1.59,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": 69.0,
+        "note": null
+      },
+      "benchmark_scores": {
+        "swe_rebench_resolved_rate": 0.58,
+        "swe_rebench_pass_at_5": 0.73,
+        "swe_rebench_cost_per_problem_usd": 1.59,
+        "swe_rebench_tokens_per_problem": 2070976
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-rebench",
+          "date": "2026-07",
+          "window": "2026-05-15..2026-07-01",
+          "sample_size": 111,
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "gemini_25_pro",
+      "model_name": "Gemini 2.5 Pro",
+      "provider": "Google",
+      "model_family": "Gemini",
+      "model_version": "2.5",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 6,
+      "context_window": 1000000,
+      "capability": {
+        "repo_bug_fix": 0.638,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 1.25,
+        "output_per_1m": 10.0,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "Google pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.638
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "gemini_31_pro",
+      "model_name": "Gemini 3.1 Pro",
+      "provider": "Google",
+      "model_family": "Gemini",
+      "model_version": "3.1",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 6,
+      "context_window": 1000000,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": 0.816,
+        "ocr": 0.698,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 2.0,
+        "output_per_1m": 12.0,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "Google pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "idp_overall": 81.6,
+        "idp_olmocr": 69.8
+      },
+      "benchmark_metadata": {
+        "document": {
+          "source": "IDP Leaderboard v1.5 (Overall)",
+          "date": "2026-09-08",
+          "verified": true
+        },
+        "ocr": {
+          "source": "IDP Leaderboard v1.5 (OlmOCR)",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "gemini_3_pro_doc",
+      "model_name": "Gemini 3 Pro（文書）",
+      "provider": "Google",
+      "model_family": "Gemini",
+      "model_version": "3",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 6,
+      "context_window": 1000000,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": 0.828,
+        "ocr": 0.777,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 2.0,
+        "output_per_1m": 12.0,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "Google pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "idp_overall": 82.8,
+        "idp_olmocr": 77.7
+      },
+      "benchmark_metadata": {
+        "document": {
+          "source": "IDP Leaderboard v1.5 (Overall)",
+          "date": "2026-09-08",
+          "verified": true
+        },
+        "ocr": {
+          "source": "IDP Leaderboard v1.5 (OlmOCR)",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "gemini_3_flash_doc",
+      "model_name": "Gemini 3 Flash（文書）",
+      "provider": "Google",
+      "model_family": "Gemini",
+      "model_version": "3",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 10,
+      "context_window": 1000000,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": 0.82,
+        "ocr": 0.753,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 0.75,
+        "output_per_1m": 3.75,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "Google pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "idp_overall": 82.0,
+        "idp_olmocr": 75.3
+      },
+      "benchmark_metadata": {
+        "document": {
+          "source": "IDP Leaderboard v1.5 (Overall)",
+          "date": "2026-09-08",
+          "verified": true
+        },
+        "ocr": {
+          "source": "IDP Leaderboard v1.5 (OlmOCR)",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "gemini_36_flash",
+      "model_name": "Gemini 3.6 Flash",
+      "provider": "Google",
+      "model_family": "Gemini",
+      "model_version": "3.6",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 8,
+      "context_window": 1000000,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": 0.78,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 0.75,
+        "output_per_1m": 3.75,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "Google pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "terminal_bench_2_1": 0.78
+      },
+      "benchmark_metadata": {
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "gemini_37_flash",
+      "model_name": "Gemini 3.7 Flash",
+      "provider": "Google",
+      "model_family": "Gemini",
+      "model_version": "3.7",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 8,
+      "context_window": 1000000,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": 0.858,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 0.75,
+        "output_per_1m": 3.75,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "Google pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "terminal_bench_2_1": 0.858
+      },
+      "benchmark_metadata": {
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "gemini_38_flash",
+      "model_name": "Gemini 3.8 Flash",
+      "provider": "Google",
+      "model_family": "Gemini",
+      "model_version": "3.8",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 8,
+      "context_window": 1000000,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": 0.894,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 0.75,
+        "output_per_1m": 3.75,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "Google pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "terminal_bench_2_1": 0.894
+      },
+      "benchmark_metadata": {
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "gemini_35_flash_lite",
+      "model_name": "Gemini 3.5 Flash-Lite",
+      "provider": "Google",
+      "model_family": "Gemini",
+      "model_version": "3.5-lite",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 12,
+      "context_window": 1000000,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": 0.54,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 0.3,
+        "output_per_1m": 2.5,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "Google pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "terminal_bench_2_1": 0.54
+      },
+      "benchmark_metadata": {
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "gemma_4_e4b",
+      "model_name": "Gemma 4 E4B（open-weight）",
+      "provider": "Google",
+      "model_family": "Gemma",
+      "model_version": "4-e4b",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 10,
+      "context_window": 128000,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": 0.539,
+        "ocr": 0.47,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "idp_overall": 53.9,
+        "idp_olmocr": 47.0
+      },
+      "benchmark_metadata": {
+        "document": {
+          "source": "IDP Leaderboard v1.5 (Overall)",
+          "date": "2026-09-08",
+          "verified": true
+        },
+        "ocr": {
+          "source": "IDP Leaderboard v1.5 (OlmOCR)",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "grok_45",
+      "model_name": "Grok 4.5",
+      "provider": "xAI",
+      "model_family": "Grok",
+      "model_version": "4.5",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 6,
+      "context_window": 256000,
+      "capability": {
+        "repo_bug_fix": 0.638,
+        "terminal": 0.833,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": 2.0,
+        "output_per_1m": 6.0,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": 1.47,
+        "price_source": "xAI pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": 81.0,
+        "note": null
+      },
+      "benchmark_scores": {
+        "swe_rebench_resolved_rate": 0.638,
+        "swe_rebench_pass_at_5": 0.775,
+        "swe_rebench_cost_per_problem_usd": 1.47,
+        "swe_rebench_tokens_per_problem": 2429424,
+        "terminal_bench_2_1": 0.833
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-rebench",
+          "date": "2026-07",
+          "window": "2026-05-15..2026-07-01",
+          "sample_size": 111,
+          "verified": true
+        },
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "grok_420",
+      "model_name": "Grok 4.20",
+      "provider": "xAI",
+      "model_family": "Grok",
+      "model_version": "4.20",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 6,
+      "context_window": 256000,
+      "capability": {
+        "repo_bug_fix": 0.767,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.767
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "grok_code_fast_1",
+      "model_name": "Grok Code Fast 1",
+      "provider": "xAI",
+      "model_family": "Grok",
+      "model_version": "code-fast-1",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 8,
+      "context_window": 256000,
+      "capability": {
+        "repo_bug_fix": 0.708,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.708
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "grok_imagine",
+      "model_name": "Grok Imagine（quality）",
+      "provider": "xAI",
+      "model_family": "Grok Imagine",
+      "model_version": "image",
+      "model_type": "image",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": 0.558
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "image_arena_elo": 1034
+      },
+      "benchmark_metadata": {
+        "image_generation": {
+          "source": "Image Arena",
+          "date": "2026-09",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "deepseek_v4_pro",
+      "model_name": "DeepSeek-V4 Pro",
+      "provider": "DeepSeek",
+      "model_family": "DeepSeek",
+      "model_version": "4-pro",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 6,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": 0.806,
+        "terminal": 0.879,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": 0.15,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": 131.8,
+        "note": null
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.806,
+        "swe_rebench_resolved_rate": 0.402,
+        "swe_rebench_pass_at_5": 0.64,
+        "swe_rebench_cost_per_problem_usd": 0.15,
+        "swe_rebench_tokens_per_problem": 3955414,
+        "terminal_bench_2_1": 0.879
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        },
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "deepseek_v4_flash",
+      "model_name": "DeepSeek-V4 Flash",
+      "provider": "DeepSeek",
+      "model_family": "DeepSeek",
+      "model_version": "4-flash",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 8,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": 0.79,
+        "terminal": 0.827,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.79,
+        "terminal_bench_2_1": 0.827
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        },
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "deepseek_v4_flash_vision",
+      "model_name": "DeepSeek-V4 Flash Vision",
+      "provider": "DeepSeek",
+      "model_family": "DeepSeek",
+      "model_version": "4-flash-vision",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 8,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": 0.839,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "terminal_bench_2_1": 0.839
+      },
+      "benchmark_metadata": {
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "deepseek_v3",
+      "model_name": "DeepSeek-V3（open-weight）",
+      "provider": "DeepSeek",
+      "model_family": "DeepSeek",
+      "model_version": "3",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 8,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": 0.42,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.42
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "qwen_37_max",
+      "model_name": "Qwen3.7 Max",
+      "provider": "Alibaba",
+      "model_family": "Qwen",
+      "model_version": "3.7-max",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 6,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": 0.804,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.804
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "qwen_36_plus",
+      "model_name": "Qwen3.6 Plus",
+      "provider": "Alibaba",
+      "model_family": "Qwen",
+      "model_version": "3.6-plus",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 8,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": 0.788,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.788
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "qwen_36_27b",
+      "model_name": "Qwen3.6-27B（open-weight）",
+      "provider": "Alibaba",
+      "model_family": "Qwen",
+      "model_version": "3.6-27b",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 8,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": 0.772,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.772
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "qwen38_max",
+      "model_name": "Qwen3.8 Max",
+      "provider": "Alibaba",
+      "model_family": "Qwen",
+      "model_version": "3.8-max",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 6,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": 0.866,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "terminal_bench_2_1": 0.866
+      },
+      "benchmark_metadata": {
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "qwen38_27b",
+      "model_name": "Qwen3.8-27B（open-weight）",
+      "provider": "Alibaba",
+      "model_family": "Qwen",
+      "model_version": "3.8-27b",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 8,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": 0.73,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "terminal_bench_2_1": 0.73
+      },
+      "benchmark_metadata": {
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "qwen3_vl_plus",
+      "model_name": "Qwen3-VL Plus（文書）",
+      "provider": "Alibaba",
+      "model_family": "Qwen",
+      "model_version": "3-vl-plus",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 8,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": 0.801,
+        "ocr": 0.779,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "idp_overall": 80.1,
+        "idp_olmocr": 77.9
+      },
+      "benchmark_metadata": {
+        "document": {
+          "source": "IDP Leaderboard v1.5 (Overall)",
+          "date": "2026-09-08",
+          "verified": true
+        },
+        "ocr": {
+          "source": "IDP Leaderboard v1.5 (OlmOCR)",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "qwen3_vl_235b",
+      "model_name": "Qwen3-VL-235B（文書・open-weight）",
+      "provider": "Alibaba",
+      "model_family": "Qwen",
+      "model_version": "3-vl-235b",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 8,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": 0.796,
+        "ocr": 0.768,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "idp_overall": 79.6,
+        "idp_olmocr": 76.8
+      },
+      "benchmark_metadata": {
+        "document": {
+          "source": "IDP Leaderboard v1.5 (Overall)",
+          "date": "2026-09-08",
+          "verified": true
+        },
+        "ocr": {
+          "source": "IDP Leaderboard v1.5 (OlmOCR)",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "qwen35_9b",
+      "model_name": "Qwen3.5-9B（文書・open-weight）",
+      "provider": "Alibaba",
+      "model_family": "Qwen",
+      "model_version": "3.5-9b",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 10,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": 0.767,
+        "ocr": 0.772,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "idp_overall": 76.7,
+        "idp_olmocr": 77.2
+      },
+      "benchmark_metadata": {
+        "document": {
+          "source": "IDP Leaderboard v1.5 (Overall)",
+          "date": "2026-09-08",
+          "verified": true
+        },
+        "ocr": {
+          "source": "IDP Leaderboard v1.5 (OlmOCR)",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "qwen35_4b",
+      "model_name": "Qwen3.5-4B（文書・open-weight）",
+      "provider": "Alibaba",
+      "model_family": "Qwen",
+      "model_version": "3.5-4b",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": 0.725,
+        "ocr": 0.754,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "idp_overall": 72.5,
+        "idp_olmocr": 75.4
+      },
+      "benchmark_metadata": {
+        "document": {
+          "source": "IDP Leaderboard v1.5 (Overall)",
+          "date": "2026-09-08",
+          "verified": true
+        },
+        "ocr": {
+          "source": "IDP Leaderboard v1.5 (OlmOCR)",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "qwen35_2b",
+      "model_name": "Qwen3.5-2B（文書・open-weight）",
+      "provider": "Alibaba",
+      "model_family": "Qwen",
+      "model_version": "3.5-2b",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": 0.626,
+        "ocr": 0.719,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "idp_overall": 62.6,
+        "idp_olmocr": 71.9
+      },
+      "benchmark_metadata": {
+        "document": {
+          "source": "IDP Leaderboard v1.5 (Overall)",
+          "date": "2026-09-08",
+          "verified": true
+        },
+        "ocr": {
+          "source": "IDP Leaderboard v1.5 (OlmOCR)",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "qwen_image_30_pro",
+      "model_name": "Qwen-Image-3.0-Pro",
+      "provider": "Alibaba",
+      "model_family": "Qwen Image",
+      "model_version": "3.0-pro",
+      "model_type": "image",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": 0.715
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "image_arena_elo": 1086
+      },
+      "benchmark_metadata": {
+        "image_generation": {
+          "source": "Image Arena",
+          "date": "2026-09",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "z_image_turbo",
+      "model_name": "Z-Image Turbo",
+      "provider": "Alibaba",
+      "model_family": "Z-Image",
+      "model_version": "turbo",
+      "model_type": "image",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": 0.236
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "image_arena_elo": 928
+      },
+      "benchmark_metadata": {
+        "image_generation": {
+          "source": "Image Arena",
+          "date": "2026-09",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "kimi_k3",
+      "model_name": "Kimi K3",
+      "provider": "Moonshot AI",
+      "model_family": "Kimi",
+      "model_version": "K3",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 6,
+      "context_window": 256000,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": 0.883,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "terminal_bench_2_1": 0.883
+      },
+      "benchmark_metadata": {
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "kimi_k26",
+      "model_name": "Kimi K2.6",
+      "provider": "Moonshot AI",
+      "model_family": "Kimi",
+      "model_version": "K2.6",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 6,
+      "context_window": 256000,
+      "capability": {
+        "repo_bug_fix": 0.802,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.802
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "kimi_k25",
+      "model_name": "Kimi K2.5",
+      "provider": "Moonshot AI",
+      "model_family": "Kimi",
+      "model_version": "K2.5",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 6,
+      "context_window": 256000,
+      "capability": {
+        "repo_bug_fix": 0.768,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.768
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "glm_5",
+      "model_name": "GLM-5（open-weight）",
+      "provider": "Z.ai",
+      "model_family": "GLM",
+      "model_version": "5",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 6,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": 0.778,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.778
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "glm_52",
+      "model_name": "GLM-5.2（open-weight）",
+      "provider": "Z.ai",
+      "model_family": "GLM",
+      "model_version": "5.2",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 6,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": 0.629,
+        "terminal": 0.827,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": 1.4,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": 184.2,
+        "note": null
+      },
+      "benchmark_scores": {
+        "swe_rebench_resolved_rate": 0.629,
+        "swe_rebench_pass_at_5": 0.811,
+        "swe_rebench_cost_per_problem_usd": 1.4,
+        "swe_rebench_tokens_per_problem": 5524892,
+        "terminal_bench_2_1": 0.827
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-rebench",
+          "date": "2026-07",
+          "window": "2026-05-15..2026-07-01",
+          "sample_size": 111,
+          "verified": true
+        },
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "glm_53",
+      "model_name": "GLM-5.3（open-weight）",
+      "provider": "Z.ai",
+      "model_family": "GLM",
+      "model_version": "5.3",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 8,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": 0.882,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "terminal_bench_2_1": 0.882
+      },
+      "benchmark_metadata": {
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "glm_53_flash",
+      "model_name": "GLM-5.3-Flash（open-weight）",
+      "provider": "Z.ai",
+      "model_family": "GLM",
+      "model_version": "5.3-flash",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 8,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": 0.843,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "terminal_bench_2_1": 0.843
+      },
+      "benchmark_metadata": {
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "glm_47",
+      "model_name": "GLM-4.7（open-weight）",
+      "provider": "Z.ai",
+      "model_family": "GLM",
+      "model_version": "4.7",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 8,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": 0.738,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.738
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "glm_ocr",
+      "model_name": "GLM-OCR（文書・open-weight）",
+      "provider": "Z.ai",
+      "model_family": "GLM",
+      "model_version": "ocr",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": 0.642,
+        "ocr": 0.684,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "idp_overall": 64.2,
+        "idp_olmocr": 68.4
+      },
+      "benchmark_metadata": {
+        "document": {
+          "source": "IDP Leaderboard v1.5 (Overall)",
+          "date": "2026-09-08",
+          "verified": true
+        },
+        "ocr": {
+          "source": "IDP Leaderboard v1.5 (OlmOCR)",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "minimax_m3",
+      "model_name": "MiniMax M3",
+      "provider": "MiniMax",
+      "model_family": "MiniMax",
+      "model_version": "M3",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 6,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": 0.805,
+        "terminal": 0.66,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": 0.95,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": 462.3,
+        "note": null
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.805,
+        "swe_rebench_resolved_rate": 0.472,
+        "swe_rebench_pass_at_5": 0.694,
+        "swe_rebench_cost_per_problem_usd": 0.95,
+        "swe_rebench_tokens_per_problem": 13869459,
+        "terminal_bench_2_1": 0.66
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        },
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "mimo_v2_pro",
+      "model_name": "MiMo-V2 Pro（open-weight）",
+      "provider": "Xiaomi",
+      "model_family": "MiMo",
+      "model_version": "V2-pro",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 8,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": 0.78,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.78
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "mimo_v2_flash",
+      "model_name": "MiMo-V2 Flash（open-weight）",
+      "provider": "Xiaomi",
+      "model_family": "MiMo",
+      "model_version": "V2-flash",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 10,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": 0.734,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.734
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "onprem_mimo",
+      "model_name": "社内 LLM（オンプレ・MiMo V2.5 Pro）",
+      "provider": "self-host",
+      "model_family": "MiMo",
+      "model_version": "2.5",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": false,
+      "local_available": true,
+      "max_tasks": 4,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": 0.465,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": 0.1,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": 156.3,
+        "note": null
+      },
+      "benchmark_scores": {
+        "swe_rebench_resolved_rate": 0.465,
+        "swe_rebench_pass_at_5": 0.658,
+        "swe_rebench_cost_per_problem_usd": 0.1,
+        "swe_rebench_tokens_per_problem": 4687987
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-rebench",
+          "date": "2026-07",
+          "window": "2026-05-15..2026-07-01",
+          "sample_size": 111,
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "muse_spark",
+      "model_name": "Muse Spark",
+      "provider": "Meta",
+      "model_family": "Muse",
+      "model_version": "spark",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 6,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": 0.774,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.774
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "muse_spark_13",
+      "model_name": "Muse Spark 1.3",
+      "provider": "Meta",
+      "model_family": "Muse",
+      "model_version": "spark-1.3",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 6,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": 0.888,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "terminal_bench_2_1": 0.888
+      },
+      "benchmark_metadata": {
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "muse_spark_12",
+      "model_name": "Muse Spark 1.2",
+      "provider": "Meta",
+      "model_family": "Muse",
+      "model_version": "spark-1.2",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 6,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": 0.829,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "terminal_bench_2_1": 0.829
+      },
+      "benchmark_metadata": {
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "muse_spark_11",
+      "model_name": "Muse Spark 1.1",
+      "provider": "Meta",
+      "model_family": "Muse",
+      "model_version": "spark-1.1",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 6,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": 0.8,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "terminal_bench_2_1": 0.8
+      },
+      "benchmark_metadata": {
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "muse_glimmer_30b",
+      "model_name": "Muse Glimmer 30B（open-weight）",
+      "provider": "Meta",
+      "model_family": "Muse",
+      "model_version": "glimmer-30b",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 8,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": 0.76,
+        "terminal": 0.517,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.76,
+        "terminal_bench_2_1": 0.517
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        },
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "muse_image",
+      "model_name": "Muse Image",
+      "provider": "Meta",
+      "model_family": "Muse",
+      "model_version": "image",
+      "model_type": "image",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": 0.806
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "image_arena_elo": 1116
+      },
+      "benchmark_metadata": {
+        "image_generation": {
+          "source": "Image Arena",
+          "date": "2026-09",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "llama_32_vision_11b",
+      "model_name": "Llama 3.2 Vision 11B（文書・open-weight）",
+      "provider": "Meta",
+      "model_family": "Llama",
+      "model_version": "3.2-vision-11b",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": 0.508,
+        "ocr": 0.491,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "idp_overall": 50.8,
+        "idp_olmocr": 49.1
+      },
+      "benchmark_metadata": {
+        "document": {
+          "source": "IDP Leaderboard v1.5 (Overall)",
+          "date": "2026-09-08",
+          "verified": true
+        },
+        "ocr": {
+          "source": "IDP Leaderboard v1.5 (OlmOCR)",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "nemotron_3_ultra",
+      "model_name": "Nemotron 3 Ultra（open-weight）",
+      "provider": "NVIDIA",
+      "model_family": "Nemotron",
+      "model_version": "3-ultra",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 5,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": 0.719,
+        "terminal": 0.564,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.719,
+        "terminal_bench_2_1": 0.564
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        },
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "nemotron_35_lightning",
+      "model_name": "Nemotron 3.5 Lightning 30B",
+      "provider": "NVIDIA",
+      "model_family": "Nemotron",
+      "model_version": "3.5-lightning",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 8,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": 0.246,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "terminal_bench_2_1": 0.246
+      },
+      "benchmark_metadata": {
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "mistral_medium_35",
+      "model_name": "Mistral Medium 3.5",
+      "provider": "Mistral",
+      "model_family": "Mistral",
+      "model_version": "medium-3.5",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 6,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": 0.776,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.776
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "mistral_small_4",
+      "model_name": "Mistral Small 4（文書・open-weight）",
+      "provider": "Mistral",
+      "model_family": "Mistral",
+      "model_version": "small-4",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 10,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": 0.715,
+        "ocr": 0.696,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "idp_overall": 71.5,
+        "idp_olmocr": 69.6
+      },
+      "benchmark_metadata": {
+        "document": {
+          "source": "IDP Leaderboard v1.5 (Overall)",
+          "date": "2026-09-08",
+          "verified": true
+        },
+        "ocr": {
+          "source": "IDP Leaderboard v1.5 (OlmOCR)",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "ministral_8b",
+      "model_name": "Ministral 8B（文書・open-weight）",
+      "provider": "Mistral",
+      "model_family": "Mistral",
+      "model_version": "ministral-8b",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": 0.695,
+        "ocr": 0.587,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "idp_overall": 69.5,
+        "idp_olmocr": 58.7
+      },
+      "benchmark_metadata": {
+        "document": {
+          "source": "IDP Leaderboard v1.5 (Overall)",
+          "date": "2026-09-08",
+          "verified": true
+        },
+        "ocr": {
+          "source": "IDP Leaderboard v1.5 (OlmOCR)",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "pixtral_12b",
+      "model_name": "Pixtral 12B（文書・open-weight）",
+      "provider": "Mistral",
+      "model_family": "Mistral",
+      "model_version": "pixtral-12b",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": 0.465,
+        "ocr": 0.383,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "idp_overall": 46.5,
+        "idp_olmocr": 38.3
+      },
+      "benchmark_metadata": {
+        "document": {
+          "source": "IDP Leaderboard v1.5 (Overall)",
+          "date": "2026-09-08",
+          "verified": true
+        },
+        "ocr": {
+          "source": "IDP Leaderboard v1.5 (OlmOCR)",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "inkling_small",
+      "model_name": "Inkling-Small",
+      "provider": "Thinking Machines Lab",
+      "model_family": "Inkling",
+      "model_version": "small",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 6,
+      "context_window": 200000,
+      "capability": {
+        "repo_bug_fix": 0.802,
+        "terminal": 0.647,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.802,
+        "terminal_bench_2_1": 0.647
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        },
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "hy4_preview",
+      "model_name": "Hunyuan 4 preview",
+      "provider": "Tencent",
+      "model_family": "Hunyuan",
+      "model_version": "4-preview",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 6,
+      "context_window": 256000,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": 0.854,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "terminal_bench_2_1": 0.854
+      },
+      "benchmark_metadata": {
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "hy3",
+      "model_name": "Hunyuan 3",
+      "provider": "Tencent",
+      "model_family": "Hunyuan",
+      "model_version": "3",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 6,
+      "context_window": 256000,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": 0.717,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "terminal_bench_2_1": 0.717
+      },
+      "benchmark_metadata": {
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "seed_21_pro",
+      "model_name": "Seed 2.1 Pro",
+      "provider": "ByteDance",
+      "model_family": "Seed",
+      "model_version": "2.1-pro",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 6,
+      "context_window": 256000,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": 0.71,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "terminal_bench_2_1": 0.71
+      },
+      "benchmark_metadata": {
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "seed_21_turbo",
+      "model_name": "Seed 2.1 Turbo",
+      "provider": "ByteDance",
+      "model_family": "Seed",
+      "model_version": "2.1-turbo",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 8,
+      "context_window": 256000,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": 0.676,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "terminal_bench_2_1": 0.676
+      },
+      "benchmark_metadata": {
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "laguna_s_21",
+      "model_name": "Laguna S 2.1",
+      "provider": "Poolside",
+      "model_family": "Laguna",
+      "model_version": "S-2.1",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 6,
+      "context_window": 200000,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": 0.702,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "terminal_bench_2_1": 0.702
+      },
+      "benchmark_metadata": {
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "mai_code_11_flash",
+      "model_name": "MAI-Code 1.1 Flash",
+      "provider": "Microsoft",
+      "model_family": "MAI-Code",
+      "model_version": "1.1-flash",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 8,
+      "context_window": 256000,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": 0.629,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "terminal_bench_2_1": 0.629
+      },
+      "benchmark_metadata": {
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "solar_pro_4",
+      "model_name": "Solar Pro 4（open-weight）",
+      "provider": "Upstage",
+      "model_family": "Solar",
+      "model_version": "pro-4",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 8,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": 0.57,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "terminal_bench_2_1": 0.57
+      },
+      "benchmark_metadata": {
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "ibm_granite_42_30b",
+      "model_name": "IBM Granite 4.2 30B（open-weight）",
+      "provider": "IBM",
+      "model_family": "Granite",
+      "model_version": "4.2-30b",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 8,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": 0.292,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "terminal_bench_2_1": 0.292
+      },
+      "benchmark_metadata": {
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "ibm_granite_42_8b",
+      "model_name": "IBM Granite 4.2 8B（open-weight）",
+      "provider": "IBM",
+      "model_family": "Granite",
+      "model_version": "4.2-8b",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 10,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": 0.206,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "terminal_bench_2_1": 0.206
+      },
+      "benchmark_metadata": {
+        "terminal": {
+          "source": "Terminal-Bench 2.1",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "granite_42_8b",
+      "model_name": "IBM Granite 4.2 8B（open-weight）",
+      "provider": "IBM",
+      "model_family": "Granite",
+      "model_version": "4.2-8b",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 10,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": 0.477,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "swe_bench_verified": 0.477
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-bench Verified",
+          "date": "2026-09-04",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "junie",
+      "model_name": "Junie",
+      "provider": "JetBrains",
+      "model_family": "Junie",
+      "model_version": "agent",
+      "model_type": "coding_agent",
+      "is_agent": true,
+      "agent_harness": "Junie",
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 5,
+      "context_window": 200000,
+      "capability": {
+        "repo_bug_fix": 0.618,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": 0.81,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": 56.2,
+        "note": null
+      },
+      "benchmark_scores": {
+        "swe_rebench_resolved_rate": 0.618,
+        "swe_rebench_pass_at_5": 0.739,
+        "swe_rebench_cost_per_problem_usd": 0.81,
+        "swe_rebench_tokens_per_problem": 1684501
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-rebench",
+          "date": "2026-07",
+          "window": "2026-05-15..2026-07-01",
+          "sample_size": 111,
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "cursor",
+      "model_name": "Cursor",
+      "provider": "Cursor",
+      "model_family": "Cursor",
+      "model_version": "agent",
+      "model_type": "coding_agent",
+      "is_agent": true,
+      "agent_harness": "Cursor",
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 6,
+      "context_window": 200000,
+      "capability": {
+        "repo_bug_fix": 0.517,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": 0.41,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": 60.9,
+        "note": null
+      },
+      "benchmark_scores": {
+        "swe_rebench_resolved_rate": 0.517,
+        "swe_rebench_pass_at_5": 0.658,
+        "swe_rebench_cost_per_problem_usd": 0.41,
+        "swe_rebench_tokens_per_problem": 1827002
+      },
+      "benchmark_metadata": {
+        "repo_bug_fix": {
+          "source": "SWE-rebench",
+          "date": "2026-07",
+          "window": "2026-05-15..2026-07-01",
+          "sample_size": 111,
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "nanonets_ocr3",
+      "model_name": "Nanonets OCR-3（文書専用・open-weight）",
+      "provider": "Nanonets",
+      "model_family": "Nanonets",
+      "model_version": "ocr-3",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": 0.859,
+        "ocr": 0.874,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "idp_overall": 85.9,
+        "idp_olmocr": 87.4
+      },
+      "benchmark_metadata": {
+        "document": {
+          "source": "IDP Leaderboard v1.5 (Overall)",
+          "date": "2026-09-08",
+          "verified": true
+        },
+        "ocr": {
+          "source": "IDP Leaderboard v1.5 (OlmOCR)",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "nanonets_ocr2p",
+      "model_name": "Nanonets OCR2+（文書専用・open-weight）",
+      "provider": "Nanonets",
+      "model_family": "Nanonets",
+      "model_version": "ocr-2+",
+      "model_type": "llm",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": 0.818,
+        "ocr": 0.82,
+        "image_generation": null
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "idp_overall": 81.8,
+        "idp_olmocr": 82.0
+      },
+      "benchmark_metadata": {
+        "document": {
+          "source": "IDP Leaderboard v1.5 (Overall)",
+          "date": "2026-09-08",
+          "verified": true
+        },
+        "ocr": {
+          "source": "IDP Leaderboard v1.5 (OlmOCR)",
+          "date": "2026-09-08",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "gpt_image_2",
+      "model_name": "GPT Image 2",
+      "provider": "OpenAI",
+      "model_family": "GPT Image",
+      "model_version": "2",
+      "model_type": "image",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": 0.994
+      },
+      "pricing": {
+        "input_per_1m": 5.0,
+        "output_per_1m": 30.0,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "OpenAI pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "image_arena_elo": 1178
+      },
+      "benchmark_metadata": {
+        "image_generation": {
+          "source": "Image Arena",
+          "date": "2026-09",
+          "verified": true,
+          "samples": 14585
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "gpt_image_15",
+      "model_name": "GPT Image 1.5",
+      "provider": "OpenAI",
+      "model_family": "GPT Image",
+      "model_version": "1.5",
+      "model_type": "image",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": 0.8
+      },
+      "pricing": {
+        "input_per_1m": 5.0,
+        "output_per_1m": 32.0,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": "OpenAI pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "image_arena_elo": 1114
+      },
+      "benchmark_metadata": {
+        "image_generation": {
+          "source": "Image Arena",
+          "date": "2026-09",
+          "verified": true,
+          "samples": 14082
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "gpt_image_1",
+      "model_name": "GPT Image 1",
+      "provider": "OpenAI",
+      "model_family": "GPT Image",
+      "model_version": "1",
+      "model_type": "image",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": 0.476
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "image_arena_elo": 1007
+      },
+      "benchmark_metadata": {
+        "image_generation": {
+          "source": "Image Arena",
+          "date": "2026-09",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "mai_image_26",
+      "model_name": "MAI-Image-2.6",
+      "provider": "Microsoft",
+      "model_family": "MAI-Image",
+      "model_version": "2.6",
+      "model_type": "image",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": 0.906
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "image_arena_elo": 1149
+      },
+      "benchmark_metadata": {
+        "image_generation": {
+          "source": "Image Arena",
+          "date": "2026-09",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "mai_image_25",
+      "model_name": "MAI-Image-2.5",
+      "provider": "Microsoft",
+      "model_family": "MAI-Image",
+      "model_version": "2.5",
+      "model_type": "image",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": 0.794
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "image_arena_elo": 1112
+      },
+      "benchmark_metadata": {
+        "image_generation": {
+          "source": "Image Arena",
+          "date": "2026-09",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "reve_21",
+      "model_name": "Reve 2.1",
+      "provider": "Reve",
+      "model_family": "Reve",
+      "model_version": "2.1",
+      "model_type": "image",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": 0.839
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "image_arena_elo": 1127
+      },
+      "benchmark_metadata": {
+        "image_generation": {
+          "source": "Image Arena",
+          "date": "2026-09",
+          "verified": true,
+          "samples": 16045
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "nano_banana_2",
+      "model_name": "Nano Banana 2（Gemini 3.1 Flash Image）",
+      "provider": "Google",
+      "model_family": "Gemini",
+      "model_version": "3.1-flash-image",
+      "model_type": "image",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": 0.821
+      },
+      "pricing": {
+        "input_per_1m": 0.5,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": 0.039,
+        "benchmark_cost_per_task": null,
+        "price_source": "Google pricing"
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "image_arena_elo": 1121
+      },
+      "benchmark_metadata": {
+        "image_generation": {
+          "source": "Image Arena",
+          "date": "2026-09",
+          "verified": true,
+          "samples": 15772
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "nano_banana_pro",
+      "model_name": "Nano Banana Pro（Gemini 3 Pro Image）",
+      "provider": "Google",
+      "model_family": "Gemini",
+      "model_version": "3-pro-image",
+      "model_type": "image",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": 0.755
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "image_arena_elo": 1099
+      },
+      "benchmark_metadata": {
+        "image_generation": {
+          "source": "Image Arena",
+          "date": "2026-09",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "nano_banana_2_lite",
+      "model_name": "Nano Banana 2 Lite",
+      "provider": "Google",
+      "model_family": "Gemini",
+      "model_version": "3.1-flash-lite-image",
+      "model_type": "image",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": 0.724
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "image_arena_elo": 1089
+      },
+      "benchmark_metadata": {
+        "image_generation": {
+          "source": "Image Arena",
+          "date": "2026-09",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "ideogram_4",
+      "model_name": "Ideogram 4.0",
+      "provider": "Ideogram",
+      "model_family": "Ideogram",
+      "model_version": "4.0",
+      "model_type": "image",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": 0.506
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "image_arena_elo": 1017
+      },
+      "benchmark_metadata": {
+        "image_generation": {
+          "source": "Image Arena",
+          "date": "2026-09",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "ideogram_4_quality",
+      "model_name": "Ideogram 4.0 (Quality)",
+      "provider": "Ideogram",
+      "model_family": "Ideogram",
+      "model_version": "4.0-quality",
+      "model_type": "image",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": 0.497
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "image_arena_elo": 1014
+      },
+      "benchmark_metadata": {
+        "image_generation": {
+          "source": "Image Arena",
+          "date": "2026-09",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "flux_2_pro",
+      "model_name": "FLUX.2 [pro]",
+      "provider": "Black Forest Labs",
+      "model_family": "FLUX",
+      "model_version": "2-pro",
+      "model_type": "image",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": 0.488
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "image_arena_elo": 1011
+      },
+      "benchmark_metadata": {
+        "image_generation": {
+          "source": "Image Arena",
+          "date": "2026-09",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "flux_2_max",
+      "model_name": "FLUX.2 [max]",
+      "provider": "Black Forest Labs",
+      "model_family": "FLUX",
+      "model_version": "2-max",
+      "model_type": "image",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": 0.548
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "image_arena_elo": 1031
+      },
+      "benchmark_metadata": {
+        "image_generation": {
+          "source": "Image Arena",
+          "date": "2026-09",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "flux_2_flex",
+      "model_name": "FLUX.2 [flex]（open-weight）",
+      "provider": "Black Forest Labs",
+      "model_family": "FLUX",
+      "model_version": "2-flex",
+      "model_type": "image",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": true,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": 0.533
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "image_arena_elo": 1026
+      },
+      "benchmark_metadata": {
+        "image_generation": {
+          "source": "Image Arena",
+          "date": "2026-09",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "imagen_4_ultra",
+      "model_name": "Imagen 4 Ultra",
+      "provider": "Google",
+      "model_family": "Imagen",
+      "model_version": "4-ultra",
+      "model_type": "image",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": 0.424
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "image_arena_elo": 990
+      },
+      "benchmark_metadata": {
+        "image_generation": {
+          "source": "Image Arena",
+          "date": "2026-09",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "imagen_4_std",
+      "model_name": "Imagen 4 Standard",
+      "provider": "Google",
+      "model_family": "Imagen",
+      "model_version": "4-std",
+      "model_type": "image",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": 0.227
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "image_arena_elo": 925
+      },
+      "benchmark_metadata": {
+        "image_generation": {
+          "source": "Image Arena",
+          "date": "2026-09",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "midjourney_v7",
+      "model_name": "Midjourney v7 Alpha",
+      "provider": "Midjourney",
+      "model_family": "Midjourney",
+      "model_version": "7",
+      "model_type": "image",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": 0.133
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "image_arena_elo": 894
+      },
+      "benchmark_metadata": {
+        "image_generation": {
+          "source": "Image Arena",
+          "date": "2026-09",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    },
+    {
+      "model_id": "midjourney_v6",
+      "model_name": "Midjourney v6",
+      "provider": "Midjourney",
+      "model_family": "Midjourney",
+      "model_version": "6",
+      "model_type": "image",
+      "is_agent": false,
+      "agent_harness": null,
+      "external_api": true,
+      "local_available": false,
+      "max_tasks": 12,
+      "context_window": null,
+      "capability": {
+        "repo_bug_fix": null,
+        "terminal": null,
+        "document": null,
+        "ocr": null,
+        "image_generation": 0.085
+      },
+      "pricing": {
+        "input_per_1m": null,
+        "output_per_1m": null,
+        "cached_input_per_1m": null,
+        "per_image": null,
+        "benchmark_cost_per_task": null,
+        "price_source": null
+      },
+      "latency": {
+        "avg_task_completion_sec": null,
+        "note": "SWE-rebench 未掲載のため未取得"
+      },
+      "benchmark_scores": {
+        "image_arena_elo": 878
+      },
+      "benchmark_metadata": {
+        "image_generation": {
+          "source": "Image Arena",
+          "date": "2026-09",
+          "verified": true
+        }
+      },
+      "sources": {
+        "benchmark_checked_at": "2026-09-08",
+        "pricing_checked_at": "2026-09-08"
+      }
+    }
+  ]
+}
