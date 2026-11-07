@@ -128,14 +128,14 @@ uv run streamlit run app/app.py
 设任务角色为 $\rho_j$，能力分数为 $s_{ik}$，角色对应的混合权重为 $b_{\rho_j k}$，角色修正系数为 $f_{\rho_j}$：
 
 $$
-Q_{i,\rho_j}=\operatorname{clip}_{[0,1]}\left(f_{\rho_j}\sum_k b_{\rho_j k}s_{ik}\right)
+Q_{i,\rho_j}=\mathrm{clip}_{[0,1]}\left(f_{\rho_j}\sum_k b_{\rho_j k}s_{ik}\right)
 $$
 
 $$
 q_{ij}=Q_{i,\rho_j}\max\left(0,1-0.12(d_j-1)\right),\qquad w_j=\frac{p_j}{5}
 $$
 
-主要能力缺失时禁止分配，次要能力缺失按0参与合成。可靠性优先使用目录中的 SWE-rebench Pass@5，否则使用 $r_{ij}=\operatorname{clip}_{[0,1]}(Q_{i,\rho_j}+0.10)$。这一补充值是启发式估计，不是实测成功概率。
+主要能力缺失时禁止分配，次要能力缺失按0参与合成。可靠性优先使用目录中的 SWE-rebench Pass@5，否则使用 $r_{ij}=\mathrm{clip}_{[0,1]}(Q_{i,\rho_j}+0.10)$。这一补充值是启发式估计，不是实测成功概率。
 
 ### 3. 成本估算
 
@@ -148,14 +148,14 @@ $$
 使用词元价格时，$P_i^{\mathrm{in}}$ 与 $P_i^{\mathrm{out}}$ 分别表示每百万输入、输出词元的美元价格。单个任务的预估单价为：
 
 $$
-u_{ij}=\operatorname{round}_4\left[\max\left(0.01,m_j\frac{60000P_i^{\mathrm{in}}+8000P_i^{\mathrm{out}}}{10^6}\right)\right]
+u_{ij}=\mathrm{round}_4\left[\max\left(0.01,m_j\frac{60000P_i^{\mathrm{in}}+8000P_i^{\mathrm{out}}}{10^6}\right)\right]
 $$
 
 基准费用分支的单价下限为0.01美元，图像分支为0.001美元，默认分支使用 $0.20m_j$ 美元。`cost_for` 将其保留四位小数，系数构建阶段再乘以数量，并设置最终0.01美元下限：
 
 $$
 c_{ij}=\max\left(0.01,u_{ij}\max(1,n_j)\right),\qquad
-\hat c_{ij}=\operatorname{clip}_{[0,1]}\left(\frac{c_{ij}}{c_{\max}}\right)
+\hat c_{ij}=\mathrm{clip}_{[0,1]}\left(\frac{c_{ij}}{c_{\max}}\right)
 $$
 
 $c_{\max}$ 是所有允许分配组合中的最大成本；没有允许的组合时取1。输入60,000、输出8,000词元是固定估算假设，不代表实际消耗。
@@ -209,8 +209,8 @@ $z$ 表示辅助编码变量，$P_{\mathrm{budget}}$ 表示预算惩罚项。**�
 
 $$
 C_{\mathrm{total}}=\sum_{i,j}c_{ij}x_{ij},\qquad
-A_j=\operatorname{round}_2(5q_{a(j),j}),\qquad
-\overline A=\operatorname{round}_2\left(\frac{1}{|J_a|}\sum_{j\in J_a}A_j\right)
+A_j=\mathrm{round}_2(5q_{a(j),j}),\qquad
+\overline A=\mathrm{round}_2\left(\frac{1}{|J_a|}\sum_{j\in J_a}A_j\right)
 $$
 
 平均质量不按重要性加权，没有已分配任务时返回0。应同时检查 `feasible`（是否可行）、`within_budget`（是否在预算内）与 `violations`（违规数）。Greedy 可能返回违反约束的分配，因此有结果不代表满足全部约束。

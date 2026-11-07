@@ -133,14 +133,14 @@ These equations describe the current implementation. The clip operator limits a 
 For task role $\rho_j$, capability score $s_{ik}$, role blend weight $b_{\rho_j k}$, and role factor $f_{\rho_j}$:
 
 $$
-Q_{i,\rho_j}=\operatorname{clip}_{[0,1]}\left(f_{\rho_j}\sum_k b_{\rho_j k}s_{ik}\right)
+Q_{i,\rho_j}=\mathrm{clip}_{[0,1]}\left(f_{\rho_j}\sum_k b_{\rho_j k}s_{ik}\right)
 $$
 
 $$
 q_{ij}=Q_{i,\rho_j}\max\left(0,1-0.12(d_j-1)\right),\qquad w_j=\frac{p_j}{5}
 $$
 
-A missing primary capability makes an assignment unavailable. Missing secondary capabilities contribute zero. Reliability uses catalog SWE-rebench Pass@5 when present; otherwise $r_{ij}=\operatorname{clip}_{[0,1]}(Q_{i,\rho_j}+0.10)$. This fallback is a heuristic, not a measured probability.
+A missing primary capability makes an assignment unavailable. Missing secondary capabilities contribute zero. Reliability uses catalog SWE-rebench Pass@5 when present; otherwise $r_{ij}=\mathrm{clip}_{[0,1]}(Q_{i,\rho_j}+0.10)$. This fallback is a heuristic, not a measured probability.
 
 ### 3. Cost estimation
 
@@ -153,14 +153,14 @@ $$
 For token pricing, $P_i^{\mathrm{in}}$ and $P_i^{\mathrm{out}}$ are input and output prices in USD per million tokens. The estimated unit cost is:
 
 $$
-u_{ij}=\operatorname{round}_4\left[\max\left(0.01,m_j\frac{60000P_i^{\mathrm{in}}+8000P_i^{\mathrm{out}}}{10^6}\right)\right]
+u_{ij}=\mathrm{round}_4\left[\max\left(0.01,m_j\frac{60000P_i^{\mathrm{in}}+8000P_i^{\mathrm{out}}}{10^6}\right)\right]
 $$
 
 The benchmark branch has a USD 0.01 unit floor; the image branch has a USD 0.001 unit floor; the fallback uses $0.20m_j$ USD. `cost_for` rounds each to four decimals. The coefficient builder applies quantity and a final USD 0.01 floor:
 
 $$
 c_{ij}=\max\left(0.01,u_{ij}\max(1,n_j)\right),\qquad
-\hat c_{ij}=\operatorname{clip}_{[0,1]}\left(\frac{c_{ij}}{c_{\max}}\right)
+\hat c_{ij}=\mathrm{clip}_{[0,1]}\left(\frac{c_{ij}}{c_{\max}}\right)
 $$
 
 $c_{\max}$ is the maximum cost among allowed assignments, or 1 if none are allowed. The fixed 60,000 input and 8,000 output tokens are estimation assumptions, not measured usage.
@@ -214,8 +214,8 @@ Let $a(j)$ be the assigned model and $J_a$ the set of assigned tasks. Total cost
 
 $$
 C_{\mathrm{total}}=\sum_{i,j}c_{ij}x_{ij},\qquad
-A_j=\operatorname{round}_2(5q_{a(j),j}),\qquad
-\overline A=\operatorname{round}_2\left(\frac{1}{|J_a|}\sum_{j\in J_a}A_j\right)
+A_j=\mathrm{round}_2(5q_{a(j),j}),\qquad
+\overline A=\mathrm{round}_2\left(\frac{1}{|J_a|}\sum_{j\in J_a}A_j\right)
 $$
 
 The average is unweighted and returns 0 if no task is assigned. Check `feasible`, `within_budget`, and `violations` alongside the score. Greedy may return a constraint-violating assignment; a nonempty result does not prove feasibility.

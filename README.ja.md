@@ -108,14 +108,14 @@ uv run streamlit run app/app.py
 タスクの役割を $\rho_j$、能力値を $s_{ik}$、役割別の合成重みを $b_{\rho_j k}$、役割係数を $f_{\rho_j}$ とします。
 
 $$
-Q_{i,\rho_j}=\operatorname{clip}_{[0,1]}\left(f_{\rho_j}\sum_k b_{\rho_j k}s_{ik}\right)
+Q_{i,\rho_j}=\mathrm{clip}_{[0,1]}\left(f_{\rho_j}\sum_k b_{\rho_j k}s_{ik}\right)
 $$
 
 $$
 q_{ij}=Q_{i,\rho_j}\max\left(0,1-0.12(d_j-1)\right),\qquad w_j=\frac{p_j}{5}
 $$
 
-主能力が欠ける組合せは割当不可です。副能力の欠損は0として合成します。信頼性はカタログ内の SWE-rebench Pass@5 を優先し、無ければ $r_{ij}=\operatorname{clip}_{[0,1]}(Q_{i,\rho_j}+0.10)$ を使用します。この補完値は経験則による推定であり、実測確率ではありません。
+主能力が欠ける組合せは割当不可です。副能力の欠損は0として合成します。信頼性はカタログ内の SWE-rebench Pass@5 を優先し、無ければ $r_{ij}=\mathrm{clip}_{[0,1]}(Q_{i,\rho_j}+0.10)$ を使用します。この補完値は経験則による推定であり、実測確率ではありません。
 
 ### 3. 費用の見積もり
 
@@ -128,14 +128,14 @@ $$
 トークン単価を使う場合、$P_i^{\mathrm{in}}$ と $P_i^{\mathrm{out}}$ は入力・出力それぞれ100万トークンあたりの米ドル価格です。タスク1件の推定単価は次式で求めます。
 
 $$
-u_{ij}=\operatorname{round}_4\left[\max\left(0.01,m_j\frac{60000P_i^{\mathrm{in}}+8000P_i^{\mathrm{out}}}{10^6}\right)\right]
+u_{ij}=\mathrm{round}_4\left[\max\left(0.01,m_j\frac{60000P_i^{\mathrm{in}}+8000P_i^{\mathrm{out}}}{10^6}\right)\right]
 $$
 
 ベンチマーク費用の単価下限は0.01米ドル、画像単価の下限は0.001米ドル、既定値は $0.20m_j$ 米ドルです。`cost_for` が小数点以下4桁に丸めます。その後、係数生成時に個数を掛け、最終的な下限を0.01米ドルに設定します。
 
 $$
 c_{ij}=\max\left(0.01,u_{ij}\max(1,n_j)\right),\qquad
-\hat c_{ij}=\operatorname{clip}_{[0,1]}\left(\frac{c_{ij}}{c_{\max}}\right)
+\hat c_{ij}=\mathrm{clip}_{[0,1]}\left(\frac{c_{ij}}{c_{\max}}\right)
 $$
 
 $c_{\max}$ は割当可能な組合せの最大費用で、該当する組合せが無ければ1です。入力60,000・出力8,000トークンは見積もり用の固定前提で、実際の使用量ではありません。
@@ -189,8 +189,8 @@ $z$ は補助変数、$P_{\mathrm{budget}}$ は予算に関する罰則です。
 
 $$
 C_{\mathrm{total}}=\sum_{i,j}c_{ij}x_{ij},\qquad
-A_j=\operatorname{round}_2(5q_{a(j),j}),\qquad
-\overline A=\operatorname{round}_2\left(\frac{1}{|J_a|}\sum_{j\in J_a}A_j\right)
+A_j=\mathrm{round}_2(5q_{a(j),j}),\qquad
+\overline A=\mathrm{round}_2\left(\frac{1}{|J_a|}\sum_{j\in J_a}A_j\right)
 $$
 
 平均品質は重要度で重み付けせず、割当済みタスクが無ければ0を返します。スコアと併せて `feasible`（実行可能性）、`within_budget`（予算内）、`violations`（違反件数）を確認してください。Greedy は制約を満たさない割当を返す場合があり、結果が存在するだけでは実行可能性を保証しません。
