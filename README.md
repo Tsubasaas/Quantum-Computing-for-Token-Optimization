@@ -8,6 +8,8 @@
 
 [English](README.md) · [日本語](README.ja.md) · [简体中文](README.zh-CN.md)
 
+Developed as a participant project in **TAQUMI**, an advanced quantum talent development program jointly planned and operated by **Quanmatic and Waseda University**. The program is conducted as part of **NEDO's post-5G information and communication systems infrastructure R&D initiative**, combining quantum computing education with practical application development. [Program website](https://taqumi.quanmatic.com/) · [Organizer announcement](https://quanmatic.com/news/taqumi-human-resource-development-summer-term-2026/)
+
 **Plan AI work. Compare cost and quality. Assign the right model to each task.**
 
 > The current app interface is primarily Japanese. Badges describe the technology stack and scope, not verified CI results or measured quantum advantage.

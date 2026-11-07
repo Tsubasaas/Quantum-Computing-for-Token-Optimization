@@ -8,6 +8,8 @@
 
 [English](README.md) · [日本語](README.ja.md) · [简体中文](README.zh-CN.md)
 
+本应用是 **TAQUMI 高级量子人才培养项目**中的学员开发作品。该项目由 **Quanmatic 与早稻田大学**共同策划和运营，是 **NEDO（日本新能源与产业技术综合开发机构）推进的后5G信息通信系统基础强化研发项目**中的人才培养计划，结合量子计算理论学习与应用开发实践。[项目官网](https://taqumi.quanmatic.com/) · [主办方公告](https://quanmatic.com/news/taqumi-human-resource-development-summer-term-2026/)
+
 **拆解 AI 任务，比较成本与质量，为每个任务分配合适的模型。**
 
 > 当前应用界面主要为日语。徽章表示技术栈与实现范围，不代表测试通过或已验证量子优势。
